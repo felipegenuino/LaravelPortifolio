@@ -33,18 +33,20 @@ Route::get('/about', function () {
 
 
 Route::get('/works', function () {
-  // $works = DB::table('works')->get();
-     $works = DB::table('works')->latest()->get();
+    // $works = DB::table('works')->get();
+    // $works = DB::table('works')->latest()->get();
 
-  // para visualizar apo
-  //return  $works ;
+    $works = App\Work::all();
+
+    // para visualizar apo
+    //return  $works ;
     return view('works.index', compact('works'));
 });
 
 
 
 Route::get('/works/{work}', function ($id) {
-    $work = DB::table('works')->find($id);
+    $work = App\Work::find($id);
     return view('works.show', compact('work'));
 });
 
