@@ -19,6 +19,9 @@
         <div class="col-md-12">
             <h1>{{ $post->title }}</h1>
             <p class="lead"> {{$post->body}}</p>
+
+            <hr>
+            <div class="fb-comments" data-href="http://portfolio.test/posts/{{$post->id}}" data-numposts="5"></div>
         </div>
     </div>
 </div>
