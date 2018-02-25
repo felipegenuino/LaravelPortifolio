@@ -34,11 +34,10 @@ Route::get('/about', function () {
 
 Route::get('/works', function () {
 
-  $works = [
-     'Titulo 1',
-     'Titulo 2',
-     'Titulo 3',
-   ];
+  $works = DB::table('works')->get();
+
+  // para visualizar apo
+  //return  $works ;
 
     return view('works', compact('works'));
 });

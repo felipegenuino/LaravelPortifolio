@@ -8,7 +8,7 @@
 
             <ul>
               @foreach ($works as $work)
-                  <li> {{ $work }}</li>
+                  <li><strong> {{ $work->title }}</strong> - {{$work->body}}</li>
               @endforeach
             </ul>
 
