@@ -8,7 +8,9 @@
 
             <ul>
               @foreach ($works as $work)
-                  <li><strong> {{ $work->title }}</strong> - {{$work->body}}</li>
+                  <li>
+                    <a href="/works/{{ $work->id }}"><strong> {{ $work->title }}</strong> - {{$work->body}}</a>
+                  </li>
               @endforeach
             </ul>
 
