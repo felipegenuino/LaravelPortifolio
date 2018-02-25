@@ -30,9 +30,20 @@ Route::get('/about', function () {
      return view('about', compact('name', 'about', 'age', 'tasks'));
 });
 
+
+
 Route::get('/works', function () {
-    return view('works');
+
+  $works = [
+     'Titulo 1',
+     'Titulo 2',
+     'Titulo 3',
+   ];
+
+    return view('works', compact('works'));
 });
+
+
 
 
 
