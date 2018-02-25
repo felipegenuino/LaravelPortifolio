@@ -27,23 +27,8 @@ class PostsController extends Controller
 
       public function store()
       {
-
-        //dd(request()->all());
-
-        //create a new post using the request data
-        $post = new Post;
-        $post->title = request('title');
-        $post->body = request('body');
-
-        //salvando no banco de dados
-        $post->save();
-
-        // redirecionando
-
+        Post::create(request(['title', 'body']));
         return redirect('/');
-
-
-
-        return view('posts.store');
+        // return view('posts.store');
       }
 }
