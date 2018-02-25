@@ -6,14 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Work extends Model
 {
-    //
-    public function isComplete()
+    //listar trabalhos incompletos
+    public static function incomplete()
     {
-      return false;
-    }
-
-    public function isArchived()
-    {
-      return false;
+      return static::where('completed', 0)->get();
     }
 }
