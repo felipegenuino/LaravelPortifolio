@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Work extends Model
 {
     //listar trabalhos incompletos
-    public static function incomplete()
+    public function scopeIncomplete($query)
     {
-      return static::where('completed', 0)->get();
+      return $query->where('completed', 0);
     }
 }

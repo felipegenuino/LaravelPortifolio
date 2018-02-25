@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('home');
 });
@@ -32,23 +33,27 @@ Route::get('/about', function () {
 
 
 
-Route::get('/works', function () {
-    // $works = DB::table('works')->get();
-    // $works = DB::table('works')->latest()->get();
-
-    $works = App\Work::all();
-
-    // para visualizar apo
-    //return  $works ;
-    return view('works.index', compact('works'));
-});
+Route::get('/works', 'WorkController@index');
+Route::get('/works/{work}', 'WorkController@show');
 
 
+// Route::get('/works', function () {
+//     // $works = DB::table('works')->get();
+//     // $works = DB::table('works')->latest()->get();
+//
+//     $works = App\Work::all();
+//
+//     // para visualizar apo
+//     //return  $works ;
+//     return view('works.index', compact('works'));
+// });
 
-Route::get('/works/{work}', function ($id) {
-    $work = App\Work::find($id);
-    return view('works.show', compact('work'));
-});
+
+//
+// Route::get('/works/{work}', function ($id) {
+//     $work = App\Work::find($id);
+//     return view('works.show', compact('work'));
+// });
 
 
 
