@@ -29,7 +29,7 @@ class PostsController extends Controller
       public function store()
       {
         Post::create(request(['title', 'body']));
-        return redirect('/');
+        return redirect('/posts');
         // return view('posts.store');
       }
 }
