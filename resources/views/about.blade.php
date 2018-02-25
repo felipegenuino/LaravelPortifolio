@@ -11,9 +11,9 @@
 
             <h4>Coisas que preciso fazer</h4>
             <ul>
-              <?php foreach ($tasks as $task): ?>
-                  <li> <?php echo $task ?></li>
-              <?php endforeach; ?>
+              @foreach ($tasks as $task)
+                  <li> {{ $task }}</li>
+              @endforeach
             </ul>
         </div>
     </div>
