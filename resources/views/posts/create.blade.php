@@ -33,15 +33,11 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Create New</button>
-                <div class="form-group">
-                <div class="alert alert-error">
-                    <ul>
-                      @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
+                <div class="mt-3">
+                        @foreach ($errors->all() as $error)
+                      <div class="alert alert-danger">{{ $error }}</div>
                       @endforeach
-                    </ul>
-                </div>
-              </div>
+               </div>
              </form>
 
 
