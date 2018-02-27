@@ -26,9 +26,19 @@ class PostsController extends Controller
         return view('posts.create');
       }
 
+
+
       public function store()
       {
+        $this->validate(request(), [
+            'title' => 'required|max:255',
+            'body' => 'required',
+        ]);
+
+
+
         Post::create(request(['title', 'body']));
+
         return redirect('/posts');
         // return view('posts.store');
       }
