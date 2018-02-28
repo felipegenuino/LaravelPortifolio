@@ -18,21 +18,13 @@
                 <!-- Authentication Links -->
                 @guest
                 <li><a class="nav-link" href="/posts">Posts</a></li>
-
+                <li><a class="nav-link" href="/posts/create">Posts - new</a></li>
 
                 <li><a class="nav-link" href="/about">About</a></li>
                 <li><a class="nav-link" href="/works">Works</a></li>
                     <li><a class="nav-link" href="{{ route('login') }}">Acesso</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">Cadastre-se</a></li>
                 @else
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Admin
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="/posts/create">Posts - new</a>
-                     </div>
-                </li>
 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,6 +32,12 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                          <a class="dropdown-item" href="/posts/create">Add new post</a>
+                          <div class="dropdown-divider"></div>
+
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
